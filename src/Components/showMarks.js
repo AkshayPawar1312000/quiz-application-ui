@@ -45,13 +45,14 @@ function ShowMarks() {
 
   useEffect(() => {
     let count = 0;
-    setTotalQuestions(selectedQuizOptions?.length);
-    for (let quetion in selectedQuizOptions) {
+
+    setTotalQuestions(selectedQuizOptions?.quizSelectedOptions.length);
+    for (let quetion in selectedQuizOptions.quizSelectedOptions) {
       if (
-        selectedQuizOptions[quetion].correctAns ===
-        selectedQuizOptions[quetion].selectedOption
+        selectedQuizOptions.quizSelectedOptions[quetion].correctAns ===
+        selectedQuizOptions.quizSelectedOptions[quetion].selectedOption
       ) {
-        count = count + 1;
+        count++;
       }
     }
     setCorrectQuestions(count);
